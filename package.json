@@ -1,0 +1,16 @@
+{
+  "name": "retro",
+  "version": "1.0.0",
+  "description": "A retro js framework",
+  "license": "ISC",
+  "author": "Godmar Back",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

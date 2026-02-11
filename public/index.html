@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Kanban</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Board template -->
+  <template id="board-template">
+    <h1 class="board-header">Kanban Board</h1>
+    <div class="board-columns"></div>
+  </template>
+
+  <!-- Column template -->
+  <template id="column-template">
+    <div class="column">
+      <div class="column-title"></div>
+      <div class="card-list"></div>
+      <button class="column-add-btn">+ Add a card</button>
+    </div>
+  </template>
+
+  <!-- Card template -->
+  <template id="card-template">
+    <div class="card">
+      <div class="card-title"></div>
+      <div class="card-description"></div>
+      <div class="card-actions">
+        <button class="card-edit-btn">Edit</button>
+        <button class="card-delete-btn">Delete</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Card editor modal template -->
+  <template id="card-editor-template">
+    <div class="card-editor-overlay">
+      <div class="card-editor-dialog">
+        <h2 class="card-editor-heading"></h2>
+        <form class="card-editor-form">
+          <label for="card-title">Title</label>
+          <input class="card-title-input" type="text" id="card-title" required>
+          <label for="card-desc">Description</label>
+          <textarea class="card-desc-input" id="card-desc"></textarea>
+          <div class="card-editor-buttons">
+            <button type="button" class="card-editor-cancel">Cancel</button>
+            <button type="submit" class="card-editor-submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </template>
+
+  <script type="module" src="../dist/app/main.js"></script>
+</body>
+</html>

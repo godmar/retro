@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0079bf;
+  color: #172b4d;
+  min-height: 100vh;
+}
+
+#app {
+  padding: 20px;
+}
+
+.board-header {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.board-columns {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.column {
+  background: #ebecf0;
+  border-radius: 8px;
+  min-width: 272px;
+  max-width: 272px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 4px;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 8px;
+  padding: 4px 0;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  position: relative;
+}
+
+.card:hover {
+  background: #f4f5f7;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.card-description {
+  font-size: 0.75rem;
+  color: #5e6c84;
+}
+
+.card-actions {
+  display: none;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  gap: 2px;
+}
+
+.card:hover .card-actions {
+  display: flex;
+}
+
+.card-actions button {
+  background: #ebecf0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  color: #6b778c;
+}
+
+.card-actions button:hover {
+  background: #dadbe2;
+  color: #172b4d;
+}
+
+.column-add-btn {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  color: #5e6c84;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+.column-add-btn:hover {
+  background: #dadbe2;
+  color: #172b4d;
+}
+
+.column.drag-over {
+  background: #d4d8e0;
+}
+
+/* Card editor modal */
+.card-editor-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.card-editor-dialog {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 400px;
+  max-width: 90vw;
+}
+
+.card-editor-heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.card-editor-form label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5e6c84;
+  margin-bottom: 4px;
+}
+
+.card-editor-form input,
+.card-editor-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid #dfe1e6;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+
+.card-editor-form input:focus,
+.card-editor-form textarea:focus {
+  outline: none;
+  border-color: #0079bf;
+}
+
+.card-editor-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.card-editor-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.card-editor-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.card-editor-cancel {
+  background: #ebecf0;
+  color: #172b4d;
+}
+
+.card-editor-cancel:hover {
+  background: #dadbe2;
+}
+
+.card-editor-submit {
+  background: #0079bf;
+  color: white;
+}
+
+.card-editor-submit:hover {
+  background: #026aa7;
+}
