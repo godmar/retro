@@ -36,7 +36,7 @@ jobs:
           cp -r dist/ _site/dist/
           cp -r src/ _site/src/
           sed -i 's|\.\./dist/|./dist/|g' _site/index.html
-          pandoc docs/retro-framework.md -s --metadata title="retro Framework Documentation" -o _site/retro-framework.html
+          npx marked docs/retro-framework.md --gfm | sed '1i\<!DOCTYPE html><html><head><meta charset="UTF-8"><title>retro Framework Documentation</title></head><body>' | sed '$a\</body></html>' > _site/retro-framework.html
 
       - uses: actions/upload-pages-artifact@v3
 
