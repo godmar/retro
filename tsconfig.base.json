@@ -3,12 +3,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "outDir": "dist",
-    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
     "sourceMap": true
-  },
-  "include": ["src"]
+  }
 }

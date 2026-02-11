@@ -1,4 +1,4 @@
-import { Component } from '../retro/index.js';
+import { Component } from 'retro';
 import { Store } from './store.js';
 
 export class CardEditor extends Component {

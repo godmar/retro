@@ -1,4 +1,4 @@
-import { Router } from '../retro/index.js';
+import { Router } from 'retro';
 import { Store } from './store.js';
 import { BoardComponent } from './board.js';
 

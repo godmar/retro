@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "../../dist/app",
+    "baseUrl": ".",
+    "paths": {
+      "retro": ["../../dist/retro/index.d.ts"]
+    }
+  },
+  "include": ["."]
+}
