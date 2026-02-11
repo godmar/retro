@@ -36,7 +36,12 @@ jobs:
           cp -r dist/ _site/dist/
           cp -r src/ _site/src/
           sed -i 's|\.\./dist/|./dist/|g' _site/index.html
-          npx marked docs/retro-framework.md --gfm | sed '1i\<!DOCTYPE html><html><head><meta charset="UTF-8"><title>retro Framework Documentation</title></head><body>' | sed '$a\</body></html>' > _site/retro-framework.html
+          npx marked docs/retro-framework.md --gfm > /tmp/content.html
+          python3 -c "
+          t = open('docs/template.html').read()
+          c = open('/tmp/content.html').read()
+          open('_site/retro-framework.html','w').write(t.replace('{{CONTENT}}', c))
+          "
 
       - uses: actions/upload-pages-artifact@v3
 
